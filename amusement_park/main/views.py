@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Attractions
+
 
 def show_main_page(request):
     return render(request, "main/main_page.html")
@@ -12,3 +14,7 @@ def show_about(request):
 
 def show_prices(request):
     return render(request, "main/prices.html")
+
+def show_attractions(request):
+        all_attractions = Attractions.objects.all()
+        return render(request, "main/attractions.html", {'attractions': all_attractions})
