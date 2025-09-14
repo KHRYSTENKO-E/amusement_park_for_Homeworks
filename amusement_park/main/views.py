@@ -17,4 +17,5 @@ def show_prices(request):
 
 def show_attractions(request):
         all_attractions = Attractions.objects.all()
-        return render(request, "main/attractions.html", {'attractions': all_attractions})
+        count_of_attractions = len(all_attractions)
+        return render(request, "main/attractions.html", {'attractions': all_attractions, "count" : count_of_attractions})

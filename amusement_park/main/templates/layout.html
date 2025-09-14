@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block tittle %}{% endblock %}</title>
+</head>
+<body>
+    <img style="width:100px" src="{% static 'main/img/amusement_park_logo.jpg' %}">
+    <a href="{% url 'contacts' %}">Наші контакти</a>
+    <a href="{% url 'prices' %}">Наші ціни</a>
+    <a href="{% url 'attractions' %}">Наші атракціони</a>
+    <a href="{% url 'about' %}">Про нас</a>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

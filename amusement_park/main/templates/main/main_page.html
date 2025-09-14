@@ -1,18 +1,10 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 {% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Парк розваг "Веселка"</title>
-</head>
-<body>
-    <h1>Ласкаво просимо до нашого парку розваг "Веселка"!</h1>
-    <img style="width:100px" src="{% static 'main/img/amusement_park_logo.jpg' %}">
-    <br>
-    <a href="{% url 'contacts' %}">Наші контакти</a>
-    <a href="{% url 'prices' %}">Наші ціни</a>
-    <a href="{% url 'attractions' %}">Наші атракціони</a>
-    <a href="{% url 'about' %}">Про нас</a>
-</body>
-</html>
+
+    {% block title %}Парк розваг "Веселка"{% endblock %}
+    {% block content %}
+    <header>
+        <h1>Ласкаво просимо до нашого парку розваг "Веселка"!</h1>
+    </header>
+
+    {% endblock %}

@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Наші атракціони</title>
-</head>
-<body>
-<h1>Наші атракціони</h1>
-    {{attractions}}
-
-
-</body>
-</html>
+{% extends "layout.html" %}
+    {% block title %}Наші атракціони{% endblock %}
+    {% block content %}
+    <header>
+        <h1>Наші атракціони</h1>
+    </header>
+    {% if  count == 0%}
+      <h5>Поки що немає атракціонів</h5>
+    {% else %}
+      {% for i in attractions %}
+          <h3>"{{ i.name }}"</h3>
+        <table>
+            <tr>
+                <td>Мінімальний вік:</td>
+                <td>{{ i.min_age }}</td>
+            </tr>
+            <tr>
+                <td>Час катання:</td>
+                <td>{{ i.time }}</td>
+            </tr>
+            <tr>
+                <td>Зона розташування:</td>
+                <td>{{ i.zone }}</td>
+            </tr>
+        </table>
+        <br>
+      {% endfor %}
+    {% endif %}
+    {% endblock %}

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Про нас</title>
-</head>
-<body>
+{% extends "layout.html" %}
+
+    {% block title %}Про нас{% endblock %}
+    {% block content %}
     <header>
         <h1>Парк Розваг «Веселка»</h1>
     </header>
@@ -31,5 +26,4 @@
     <footer>
         &copy; 2025 Парк розваг «Веселка». Всі права захищено.
     </footer>
-</body>
-</html>
+    {% endblock %}

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <title>Наші ціни та послуги</title>
-</head>
-<body>
+{% extends "layout.html" %}
+
+    {% block title %}Наші ціни та послуги{% endblock %}
+    {% block content %}
     <header>
         <h1>Ціни та Послуги</h1>
     </header>
@@ -65,5 +60,4 @@
     <footer>
         &copy; 2025 Парк розваг «Веселка». Всі права захищено.
     </footer>
-</body>
-</html>
+    {% endblock %}
