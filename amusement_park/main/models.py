@@ -4,7 +4,7 @@ from ast import increment_lineno
 class Attractions(models.Model):
     id = models.IntegerField("№", primary_key=True)
 
-    time = models.IntegerField("Час катання", max_length=20)
+    time = models.CharField("Час катання", max_length=20)
 
     name = models.CharField("Назва атракціону", max_length=20)
 
@@ -14,6 +14,9 @@ class Attractions(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return f'my_administrator/attractions/{self.id}'
 
 
 class Client(models.Model):

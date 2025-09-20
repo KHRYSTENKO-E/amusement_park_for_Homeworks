@@ -7,7 +7,8 @@
     <title>{% block tittle %}{% endblock %}</title>
 </head>
 <body>
-    <img style="width:100px" src="{% static 'main/img/amusement_park_logo.jpg' %}">
+
+    <a href="{% url 'main_page' %}"><img style="width:100px" src="{% static 'main/img/amusement_park_logo.jpg' %}"></a>
     <a href="{% url 'contacts' %}">Наші контакти</a>
     <a href="{% url 'prices' %}">Наші ціни</a>
     <a href="{% url 'attractions' %}">Наші атракціони</a>
@@ -15,4 +16,7 @@
     {% block content %}
     {% endblock %}
 </body>
+<footer>
+    <p>© 2025 Парк розваг. Усі права захищені.</p>
+</footer>
 </html>

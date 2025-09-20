@@ -1,0 +1,21 @@
+{% extends "layout_admin.html" %}
+{% block title%}Додавання атракціону{% endblock %}
+{% block content %}
+
+<h1>{% block h %}Додавання нового атракціону{% endblock %}</h1>
+<br>
+<br>
+<br>
+<form method = "post">
+    {% csrf_token %}
+    <p>Назва:</p>
+    {{ form.name }}<br><br>
+    <p>Час:</p>
+    {{ form.time }}<br><br>
+    <p>Мінімальний вік:</p>
+    {{ form.min_age }}<br><br>
+    <p>Зона розташування:</p>
+    {{ form.zone }}<br><br>
+    <button type="submit">{% block b %}Додати{% endblock %}</button>
+</form>
+{% endblock %}
