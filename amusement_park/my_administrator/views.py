@@ -14,6 +14,11 @@ class AttractionUpdateView(UpdateView):
     template_name = "my_administrator/attractions/update.html"
     form_class = AttractionForm
 
+class AttractionDeleteView(DeleteView):
+    model = Attractions
+    template_name = "my_administrator/attractions/delete.html"
+    success_url = ".."
+
 def show_administrator_main_page(request):
     return render(request, "my_administrator/main_page.html")
 

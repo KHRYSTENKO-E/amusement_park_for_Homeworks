@@ -2,13 +2,16 @@
 {% block title%}Перегляд {{attractions.name}}{% endblock %}
 {% block content %}
 
-<h1>{{attractions.name}}</h1>
-<p>{{attractions.id}}</p>
-<p>{{attractions.time}}</p>
-<p>{{attractions.min_age}}</p>
-<p>{{attractions.zone}}</p>
+<h1>Назва: {{attractions.name}}</h1>
+<p>№: {{attractions.id}}</p>
+<p>Час катання: {{attractions.time}}</p>
+<p>Мінімальний вік: {{attractions.min_age}}</p>
+<p>Зона розташування: {{attractions.zone}}</p>
 
 <a href="{% url 'update_attraction' attractions.id %}">Змінити</a>
+<br>
+<br>
+<a href="{% url 'delete_attraction' attractions.id %}">Видалити</a>
 <br>
 <br>
 <a href="..">Назад</a>
