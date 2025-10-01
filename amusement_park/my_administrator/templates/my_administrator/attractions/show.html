@@ -6,15 +6,31 @@
 <br>
 <a href="{% url 'add_attraction' %}">Додати атракціон</a>
 <br>
-
+<form method="post">
+    {% csrf_token %}
+    <p>Фільтрувати:</p>
 <table>
     <tr>
-        <th>№</th>
-        <th>Назва</th>
-        <th>Час</th>
-        <th>Мінімальний вік</th>
-        <th>Зона розташування</th>
-        <th>Примітки</th>
+        <th><input name="filter_id" type="number"><br>
+            <a href="?sort=id&dir={% if sort_field == 'id' and direction == 'asc' %}desc{% else %}asc{% endif %}">№</a>
+        </th>
+        <th>
+            <input name="filter_name" type="text"><br>
+            <a href="?sort=name&dir={% if sort_field == 'name' and direction == 'asc' %}desc{% else %}asc{% endif %}">Назва</a>
+        </th>
+        <th>
+            <input name="filter_time" type="text"><br>
+            <a href = "?sort=time&dir={% if sort_field == 'time' and direction == 'asc' %}desc{% else %}asc{% endif %}">Час катання</a>
+        </th>
+        <th>
+            <input name="filter_min_age" type="number"><br>
+            <a href = "?sort=min_age&dir={% if sort_field == 'min_age' and direction == 'asc' %}desc{% else %}asc{% endif %}">Мінімальний вік</a>
+        </th>
+        <th>
+            <input name="filter_zone" type="number"><br>
+            <a href = "?sort=zone&dir={% if sort_field == 'zone' and direction == 'asc' %}desc{% else %}asc{% endif %}">Зона</a>
+        </th>
+        <th><button type="submit">{% block b %}Фільтрувати{% endblock %}</button><br><br></th>
     </tr>
     {% for i in all_attractions %}
     <tr>
@@ -29,6 +45,7 @@
      </tr>
     {% endfor %}
 </table>
+</form>
 <br>
 <br>
 <a href=".">Назад</a>

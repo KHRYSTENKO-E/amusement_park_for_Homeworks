@@ -122,3 +122,38 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version' : 1,
+    'disable_existing_loggers': False,
+    'formatters' : {
+        'simple' : {
+            'format' : "LOGGING SIMPLE Level: {levelname}. Text: {message}",
+            'style' : '{'
+        },
+        'verbose' : {
+            'format' : "[ONLY FOR DEVELOPS] LOGGING VERBOSE Date: {asctime} Level: {levelname}. Text: {message}",
+            'style' : '{'
+        }
+    },
+    'handlers' : {
+        'console' : {
+            'level' : 'INFO',
+            'class' : 'logging.StreamHandler',
+            'formatter' : 'verbose'
+        },
+        'file' : {
+            'level' : 'ERROR',
+            'class' : 'logging.FileHandler',
+            'formatter' : 'verbose',
+            'filename' : 'amusement_Park.log'
+        }
+    },
+    'loggers' : {
+        'main' : {
+            'handlers' : ['console', 'file'],
+            'level' : 'INFO',
+            'propagate' : False
+        }
+    }
+}
